@@ -5,16 +5,17 @@
   angular
   .module('grumbles')
   .controller('GrumbleIndexController', [
+    'GrumbleFactory',
     GrumbleIndexControllerFunction
   ]);
 
-  function  GrumbleIndexControllerFunction () {
-    this.grumbles = grumbles;
-    this.newGrumble = {};
-    this.create = function () {
-      grumbles.push(this.newGrumble);
-      this.newGrumble = {};
-    };
+  function  GrumbleIndexControllerFunction (GrumbleFactory) {
+    this.grumbles = GrumbleFactory.query();
+  //   this.newGrumble = {};
+  //   this.create = function () {
+  //     grumbles.push(this.newGrumble);
+  //     this.newGrumble = {};
+  //   };
   }
 
 })();

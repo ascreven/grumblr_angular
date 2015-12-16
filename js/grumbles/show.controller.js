@@ -5,14 +5,15 @@
   angular
   .module('grumbles')
   .controller('GrumbleShowController', [
-    '$stateParams',
+    '$GrumbleFactory',
     GrumbleShowControllerFunction
   ]);
 
-  function GrumbleShowControllerFunction ($stateParams) {
+  function GrumbleShowControllerFunction (GrumbleFactory) {
+    this.grumbles = GrumbleFactory.query();
     this.grumble = grumbles[$stateParams.id];
     this.delete = function () {
       grumbles.pop(this.grumble);
-    }; 
+    };
   }
 })();

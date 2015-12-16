@@ -9,7 +9,6 @@
     ])
     .config([
       '$stateProvider',
-      '$locationProvider',
       RouterFunction
     ]);
 
@@ -20,6 +19,12 @@
           templateUrl: 'js/grumbles/index.html',
           controller: 'GrumbleIndexController',
           controllerAs: 'GrumbleIndexViewModel'
+        })
+        .state('grumbleNew', {
+          url: '/grumbles/new',
+          templateUrl: 'js/grumbles/new.html',
+          controller: 'GrumbleNewController',
+          controllerAs: 'GrumbleNewViewModel'
         })
         .state('grumbleShow', {
           url: '/grumbles/:id',

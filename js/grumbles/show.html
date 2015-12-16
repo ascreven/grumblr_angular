@@ -1,8 +1,8 @@
-<h2>{{grumble.title}}</h2>
+<h2>{{GrumbleShowViewModel.grumble.title}}</h2>
 <image src='https://thumbs.cdn-ec.viddler.com/thumbnail_2_6ab6e1ab_v1.jpg'></img>
 
 <div>
   <input data-ng-model='GrumbleShowViewModel.grumble.title' />
 <div>
-  <button data-ng-click='GrumbleShowViewModel.delete()'><a data-ui-sref='grumbleIndex'>Delete Grumble</a></button>
+  <a data-ui-sref='grumbleIndex'><button data-ng-click='GrumbleShowViewModel.delete()'>Delete Grumble</button></a>
 </div>
